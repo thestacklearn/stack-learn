@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "title": "The Stack Learn",
+    "titleTemplate": "%s",
+    "description": "Stack Learn is an online transformative upskilling platform for freshers and working tech professionals. Our approach towards teaching & training young professionals not only helps them upskill but also create Impact in the real world. We are devoted to creating an ecosystem that nurtures our learners and assists them in unlocking talent, skills & opportunities at every stage of their careers. Learners enrolled with us are taught, guided, and mentored by industry veterans and experts from leading tech organizations.",
+    "siteUrl": "https://stack-learn.com",
+    "image": "/assets/logo.png",
+    "iconimage": "/assets/favicon.png",
+    "keywords": "RPA Training,software testing course,data science training,rpa classes,qa automation training",
+    "twitterUsername": ""
+  },
+  "ga": "UA-XXXXXXXXX-X"
+}

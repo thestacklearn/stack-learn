@@ -1,0 +1,44 @@
+{
+  "heading": "The Best Side of <span>TheStackLearn </span>Instructors",
+  "list": [
+    {
+      "heading": "Communication",
+      "item": [
+        {
+          "title": "Participation in class"
+        },
+        {
+          "title": "Asking Questions"
+        },
+        {
+          "title": "Helping each other"
+        }
+      ]
+    },
+    {
+      "heading": "Deliverables",
+      "item": [
+        {
+          "title": "Home Work"
+        },
+        {
+          "title": "Small Tasks"
+        },
+        {
+          "title": "Presentations"
+        }
+      ]
+    },
+    {
+      "heading": "Concept Evaluation",
+      "item": [
+        {
+          "title": "Random Quizzes"
+        },
+        {
+          "title": "Assignments"
+        }
+      ]
+    }
+  ]
+}

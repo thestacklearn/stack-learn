@@ -1,0 +1,25 @@
+{
+  "image": "/assets/about.jpg",
+  "heading": "We have helped hundreds of people worldwide unlock technical skills",
+  "description": "The Stack Learn is the world's leading online bootcamp and one of the world's leading providers of training. We work with companies and individuals to meet their unique needs, providing training and mentoring to help professionals achieve their career goals",
+  "list": [
+    {
+      "title": "Recorded Sessions"
+    },
+    {
+      "title": "Live Coding"
+    },
+    {
+      "title": "Live Projects"
+    },
+    {
+      "title": "Mock Interviews"
+    },
+    {
+      "title": "Training Material"
+    },
+    {
+      "title": "Help To Certification"
+    }
+  ]
+}

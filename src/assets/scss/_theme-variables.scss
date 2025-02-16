@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&family=Outfit:wght@100;300;400;500;700;900&display=swap');
+// breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1022px;
+$breakpoint-xl: 1200px;
+
+:root {
+  --font-family: "Outfit", sans-serif;
+  --font-size-small: 12px;
+
+  --home-link-color: #d4d4d4;
+  --home-link-hover-color: var(--primary-color);
+
+  --button-color: #e5c3d3;
+  --button-alternate-color: #5c2941;
+
+  --post-link-color: #0f070b;
+
+  --nav-link-hover-bg: #111;
+  --text-color-meta: rgba(0, 0, 0, 0.5);
+
+  --label-text: #777;
+  --input-focus-border: #83aaac;
+
+  // CSS Grid Utility
+  --grid-gap: 30px;
+}

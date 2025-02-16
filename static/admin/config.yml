@@ -1,0 +1,499 @@
+backend:
+  name: git-gateway
+  branch: main
+  commit_messages:
+    create: "Create {{collection}} “{{slug}}”"
+    update: "Update {{collection}} “{{slug}}”"
+    delete: "Delete {{collection}} “{{slug}}”"
+    uploadMedia: "[skip ci] Upload “{{path}}”"
+    deleteMedia: "[skip ci] Delete “{{path}}”"
+
+# Uncomment local_backend when you need to develop in your local
+#local_backend: true # run `npx netlify-cms-proxy-server` for local testing
+local_backend: true
+media_folder: "static/assets"
+public_folder: "/assets"
+
+collections:
+  - label: "Home Page"
+    name: "homePage"
+    files:
+      - label: "Banner"
+        name: "banner"
+        file: "src/content/home/banner.json"
+        fields:
+          - { label: heading, name: heading }
+          - { label: sub heading, name: subHeading }
+          - { label: cta, name: cta }
+          - { label: Image, name: image, widget: image }
+          - { label: "Alt Text", name: "alt", widget: "string" }
+          - { label: "Image Title", name: "imageTitle", widget: "string" }
+      - label: "Banner Features"
+        name: "bannerFeatures"
+        file: "src/content/home/banner-features.json"
+        fields:
+          - label: "Banner Features"
+            name: "bannerFeatures"
+            widget: list
+            fields:
+              - { label: Title, name: title }
+      - label: "Why Choose Us"
+        name: "whyChooseUs"
+        file: "src/content/home/why-choose-us.json"
+        fields:
+          - { label: heading, name: heading }
+          - { label: sub heading, name: subHeading }
+          - label: "List"
+            name: "list"
+            widget: list
+            fields:
+              - { label: Title, name: title }
+              - { label: description, name: description }
+          # - label: icons
+          #   name: Icons
+          #   widget: relation
+          #   collection: "icons"
+          #   searchFields: ["name"]
+          #   valueField: "name"
+          #   multiple: false
+  # - name: icons
+  #   label: Icons
+  #   folder: "src/data/icons/"
+  #   create: true
+  #   slug: "{{name}}"
+  #   identifier_field: name
+  #   fields:
+  #     - {name: name, label: Name}
+  - label: "About Us"
+    name: "aboutUs"
+    files:
+      - label: "Banner"
+        name: "banner"
+        file: "src/content/about/banner.json"
+        fields:
+          - { label: Description, name: description }
+      - label: "About TSL"
+        name: "aboutTsl"
+        file: "src/content/about/about.json"
+        fields:
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading }
+          - { label: Description, name: description }
+          - label: "List"
+            name: "list"
+            widget: list
+            fields:
+              - { label: Title, name: title }
+      - label: "Our Process"
+        name: "ourProcess"
+        file: "src/content/about/our-process.json"
+        fields:
+          - { label: Heading, name: heading }
+          - label: "List"
+            name: "list"
+            widget: list
+            fields:
+              - { label: Title, name: title }
+      - label: "What We Offer"
+        name: "whatWeOffer"
+        file: "src/content/about/what-we-offer.json"
+        fields:
+          - { label: Heading, name: heading }
+          - label: "List"
+            name: "list"
+            widget: list
+            fields:
+              - { label: Heading, name: heading }
+              - label: "Items"
+                name: "item"
+                widget: list
+                fields:
+                  - { label: title, name: title }
+  - label: "Common"
+    name: "common"
+    files:
+      - label: "Testmonials"
+        name: "testmonials"
+        file: "src/content/common/testmonials.json"
+        fields:
+          - { label: heading, name: heading }
+          - { label: sub heading, name: subHeading }
+          - { label: description, name: description }
+          - { label: about heading, name: aboutHeadng }
+          - { label: left percentage, name: leftPercentage }
+          - { label: left description, name: leftDescription }
+          - { label: right percentage, name: rightPercentage }
+          - { label: right description, name: rightDescription }
+          - label: "testmonial"
+            name: "testmonial"
+            widget: list
+            fields:
+              - { label: rating, name: rating }
+              - { label: description, name: description }
+              - { label: Student Image, name: studentImage }
+              - { label: Student Name, name: studentName }
+              - { label: Course Name, name: courseName }
+      - label: "Contact"
+        name: "contact"
+        file: "src/content/common/contact.json"
+        fields:
+          - { label: Email, name: email }
+          - { label: Mobile No, name: mobileNo }
+  - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Posts" # Used in the UI
+    label_singular: "Post" # Used in the UI, ie: "New Post"
+    description: >
+      Create awesome content here.
+    folder: "src/content/posts"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{year}}/{{month}}/{{day}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {
+          label: "Template",
+          name: "template",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          hint: "Start slug with /. Use only alphanumeric characters, - and _. Avoid spaces in any cases.",
+        }
+      - {
+          label: "Publish Date",
+          name: "date",
+          widget: "datetime",
+          dateFormat: "YYYY-MM-DD",
+          timeFormat: "HH:mm",
+          format: "YYYY-MM-DD HH:mm",
+        }
+      - { label: "SEO Description", name: "description", widget: "text" }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: "image",
+          required: false,
+          tagname: "",
+        }
+
+      - {
+          label: "Body",
+          name: "body",
+          widget: "markdown",
+          hint: "Main content goes here.",
+        }
+  - name: "itCourses" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "IT Courses" # Used in the UI
+    label_singular: "IT Courses" # Used in the UI, ie: "New Post"
+    description: >
+      Create IT Courses.
+    folder: "src/content/it-courses"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{year}}/{{month}}/{{day}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {
+          label: "Template",
+          name: "template",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          hint: "Start slug with /. Use only alphanumeric characters, - and _. Avoid spaces in any cases.",
+        }
+      - { label: "SEO Description", name: "description", widget: "text" }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: "image",
+          tagname: "",
+        }
+      - { label: "Course Level", name: "courseLevel", widget: "string" }
+      - { label: "Course Name", name: "courseName", widget: "string" }
+      - { label: "Students Count", name: "studentsCount", widget: "string" }
+      - { label: "Total Lessons", name: "totalLessons", widget: "string" }
+      - { label: "Total Quizzes", name: "totalQuizzes", widget: "string" }
+      - { label: "Total Time", name: "totalTime", widget: "string" }
+      - { label: "Youtube Id", name: "youtubeId", widget: "string", required: false }
+      - { label: Download Brochure, name: downloadBrochure, widget: file, required: false }
+      - {
+          label: "Short Description",
+          name: "shortDescription",
+          widget: "string",
+        }
+      - {
+          label: "Short Description",
+          name: "subHeading",
+          widget: "string",
+        }
+      - label: "Overview"
+        name: "overview"
+        widget: "object"
+        fields:
+          - name: "courseDescription"
+            label: "Course Description"
+            widget: "string"
+      - label: "Curriculum"
+        name: "curriculum"
+        widget: list
+        fields:
+          - { label: Chapter, name: chapter }
+          - { label: ChapterDetails, name: chapterDetails }
+          - { label: Description, name: description, required: false }
+          - label: "Details"
+            name: "details"
+            widget: list
+            fields:
+              - { label: Detail, name: detail }
+      - label: "Faqs"
+        name: "faqs"
+        widget: list
+        fields:
+          - { label: Question, name: question }
+          - { label: Answer, name: answer }
+  - name: "nonItCourses" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Non IT Courses" # Used in the UI
+    label_singular: "Non IT Courses" # Used in the UI, ie: "New Post"
+    description: >
+      Create Non IT Courses.
+    folder: "src/content/non-it-courses"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} — {{year}}/{{month}}/{{day}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {
+          label: "Template",
+          name: "template",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Title", name: "title", widget: "string", tagname: "h1" }
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          hint: "Start slug with /. Use only alphanumeric characters, - and _. Avoid spaces in any cases.",
+        }
+      - { label: "SEO Description", name: "description", widget: "text" }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: "image",
+          tagname: "",
+        }
+      - { label: "Course Level", name: "courseLevel", widget: "string" }
+      - { label: "Course Name", name: "courseName", widget: "string" }
+      - { label: "Students Count", name: "studentsCount", widget: "string" }
+      - { label: "Total Lessons", name: "totalLessons", widget: "string" }
+      - { label: "Total Quizzes", name: "totalQuizzes", widget: "string" }
+      - { label: "Total Time", name: "totalTime", widget: "string" }
+      - { label: "Youtube Id", name: "youtubeId", widget: "string", required: false }
+      - { label: Download Brochure, name: downloadBrochure, widget: file, required: false }
+      - {
+          label: "Short Description",
+          name: "shortDescription",
+          widget: "string",
+        }
+      - {
+          label: "Short Description",
+          name: "subHeading",
+          widget: "string",
+        }
+      - label: "Overview"
+        name: "overview"
+        widget: "object"
+        fields:
+          - name: "courseDescription"
+            label: "Course Description"
+            widget: "string"
+      - label: "Curriculum"
+        name: "curriculum"
+        widget: list
+        fields:
+          - { label: Chapter, name: chapter }
+          - { label: ChapterDetails, name: chapterDetails }
+          - { label: Description, name: description, required: false }
+          - label: "Details"
+            name: "details"
+            widget: list
+            fields:
+              - { label: Detail, name: detail }
+      - label: "Faqs"
+        name: "faqs"
+        widget: list
+        fields:
+          - { label: Question, name: question }
+          - { label: Answer, name: answer }
+  # - label: "Pages"
+  #   name: "pages"
+  #   files:
+  #     - label: "Home"
+  #       name: "home"
+  #       file: "src/content/pages/index.md"
+  #       fields:
+  #         - {
+  #             label: "Template",
+  #             name: "template",
+  #             widget: "hidden",
+  #             default: "index-page",
+  #           }
+  #         - { label: "Slug", name: "slug", widget: "hidden", default: "/" }
+  #         - { label: "Title", name: "title", widget: "string" }
+  #         - { label: "Tagline", name: "tagline", widget: "string" }
+  #         - { label: "Featured Image", name: "featuredImage", widget: "image" }
+  #         - { label: "Body", name: "body", widget: "markdown" }
+  #         - label: "CTA"
+  #           name: "cta"
+  #           widget: "object"
+  #           fields:
+  #             - name: "ctaText"
+  #               label: "CTA text"
+  #               widget: "string"
+  #             - name: "ctaLink"
+  #               label: "CTA Link"
+  #               widget: "string"
+  #     - label: "About"
+  #       name: "about"
+  #       file: "src/content/pages/about.md"
+  #       fields:
+  #         - {
+  #             label: "Template",
+  #             name: "template",
+  #             widget: "hidden",
+  #             default: "about-page",
+  #           }
+  #         - { label: "Slug", name: "slug", widget: "hidden", default: "/about" }
+  #         - { label: "Title", name: "title", widget: "string" }
+  #         - { label: "Body", name: "body", widget: "markdown" }
+  #     - label: "Contact"
+  #       name: "contact"
+  #       file: "src/content/pages/contact.md"
+  #       fields:
+  #         - {
+  #             label: "Template",
+  #             name: "template",
+  #             widget: "hidden",
+  #             default: "contact-page",
+  #           }
+  #         - {
+  #             label: "Slug",
+  #             name: "slug",
+  #             widget: "hidden",
+  #             default: "/contact",
+  #           }
+  #         - { label: "Title", name: "title", widget: "string" }
+  #         - { label: "Body", name: "body", widget: "markdown" }
+  - name: settings
+    label: Settings
+    files:
+      - name: general
+        label: General
+        file: "src/util/site.json"
+        fields:
+          - label: meta
+            name: meta
+            widget: object
+            fields:
+              - widget: string
+                name: title
+                label: Site Title
+                required: true
+              - widget: string
+                name: titleTemplate
+                label: Title Template
+                default: "%s"
+                required: true
+              - widget: string
+                name: siteUrl
+                label: Website URL
+                required: true
+              - widget: text
+                name: description
+                label: Description
+                default: ""
+                required: false
+              - widget: image
+                name: image
+                label: image
+                default: "/assets/stackrole.png"
+              - widget: image
+                name: iconimage
+                label: favicon
+              - widget: string
+                name: twitterUsername
+                label: Twitter
+                required: false
+
+          - label: "Google Analytics"
+            name: ga
+            widget: string
+            hint: "Add you tracking ID, for example UA-XXXXXXXXX-X"
+      - label: Social Icons
+        name: socialIcons
+        file: "src/util/socialmedia.json"
+        fields:
+          - label: Social Icons
+            name: socialIcons
+            widget: list
+            collapsed: true
+            hint: "Here you can add social icons, Click on 'Add social icons'"
+            fields:
+              - label: "Icons"
+                name: "icon"
+                widget: "select"
+                options:
+                  [
+                    "facebook",
+                    "twitter",
+                    "linkedin",
+                    "youtube",
+                    "instagram",
+                    "rss",
+                    "github",
+                    "telegram",
+                    "pinterest",
+                    "snapchat",
+                    "skype",
+                    "wordpress",
+                    "tiktok",
+                    "dribbble",
+                    "medium",
+                    "behance",
+                    "vk",
+                  ]
+                hint: "Select the Icon"
+              - widget: string
+                name: url
+                label: url
+                required: true
+                hint: "Paste the 'URL' of your Social media"
+
+  # - label: "Appearance"
+  #   name: "appearance"
+  #   identifier_field: "name"
+  #   files:
+  #     - label: "Default Theme"
+  #       name: "themescolors"
+  #       file: "src/util/default-colors.json"
+  #       fields:
+  #         - label: "Primary Color"
+  #           name: "siteColor"
+  #           widget: "color"
+  #           enableAlpha: true
+  #           allowInput: true
+  #     - label: "Dark Theme"
+  #       name: "darkthemescolors"
+  #       file: "src/util/dark-theme-colors.json"
+  #       fields:
+  #         - label: "Primary Color"
+  #           name: "siteColor"
+  #           widget: "color"
+  #           enableAlpha: true
+  #           allowInput: true

@@ -1,0 +1,22 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+  
+[build.environment]
+  NODE_VERSION = "14.15.0"
+  
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
+
+[[redirects]]
+  from = "/course/data-science"
+  to = "/data-science-course"
+  status = 301
+  force = false
+  query = {path = ":path"}
+  conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}

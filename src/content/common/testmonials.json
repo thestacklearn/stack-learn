@@ -1,0 +1,47 @@
+{
+  "rightDescription": "Users reported better learning <br/> outcomes.",
+  "leftPercentage": "90%",
+  "heading": "TESTIMONIALS",
+  "subHeading": "Student's Feedback",
+  "aboutHeadng": "People Love To Learn With Us",
+  "leftDescription": "Students Completed Course <br/> Successfully",
+  "rightPercentage": "9/10",
+  "testmonial": [
+    {
+      "rating": "5",
+      "description": "\"My experience with The Stack Learn Institute's data science course was truly exceptional. From the comprehensive curriculum to the hands-on projects, every aspect of the program was thoughtfully designed to provide a holistic understanding of data science concepts. \"",
+      "studentImage": "/assets/nishanth-n.jpg",
+      "studentName": "Nihanth N",
+      "courseName": "Data Science"
+    },
+    {
+      "rating": "4.75",
+      "description": "\"I am extremely satisfied with the training I received at this institute. The trainers were not only experts in their field but also excellent communicators. They were able to simplify complex concepts and explain them in a way that was easy to understand.  I highly recommend this institute for anyone seeking quality training. \"",
+      "studentImage": "/assets/sreenivas.jpeg",
+      "studentName": "Sreenivas",
+      "courseName": "SDET"
+    },
+    {
+      "courseName": "SDET",
+      "studentName": "Lokesh",
+      "studentImage": "/assets/lokesh.jpeg",
+      "description": "\"Choosing this training institute was a game-changer for me. The trainers go above and beyond to ensure that each student understands the concepts thoroughly. The institute also offers various hands-on activities and projects, allowing us to apply what we've learned in a practical setting. The supportive and encouraging atmosphere at the institute made learning enjoyable and motivated me to excel. \"",
+      "rating": "5"
+    },
+    {
+      "courseName": "SDET",
+      "studentName": "Aravindh",
+      "studentImage": "/assets/aravindh.jpeg",
+      "description": "\"Enrolling in this training institute was one of the best decisions I've made for my professional development. The trainers are experts in their respective fields and deliver the content in a way that is engaging and easy to understand. The institute also provides ample resources and support throughout the learning journey. I highly recommend this institute to anyone looking to upgrade their skills. \"",
+      "rating": "4.5"
+    },
+    {
+      "courseName": "SDET",
+      "studentName": "Vijay",
+      "studentImage": "/assets/vijay.jpeg",
+      "description": "\"I am extremely impressed with the quality of training provided by this institute. The course curriculum is well-designed and covers all the necessary topics in-depth. The trainers are not only subject matter experts but also skilled communicators, making complex concepts easy to grasp. I am grateful for the practical skills I acquired during my time at this institute, which have greatly benefited my career. \"",
+      "rating": "5"
+    }
+  ],
+  "description": "Discover the remarkable career transformations our learners have experienced after their educational journey with us."
+}
