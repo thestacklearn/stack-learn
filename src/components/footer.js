@@ -118,7 +118,10 @@ const Footer = ({ itCourses, nonItCourses }) => {
             </ul>
           </div>
           <div className="right">
-            <h2 className="heading">Contact</h2>
+            <div className="heading-container" style={{ display: 'flex', flexDirection: 'column' }}>
+              <h2 className="heading"><Link to="/study-abroad">Study Abroad</Link></h2>
+              <h2 className="heading" style={{ marginTop: '20px' }}>Contact</h2>
+            </div>
             <ul className="contact">
               <li>
                 <FiPhone className="right-icon" />

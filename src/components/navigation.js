@@ -22,6 +22,10 @@ const MenuItems = [
     path: "/non-it-courses",
     title: "Non IT Courses",
   },
+  {
+    path: "/study-abroad",
+    title: "Study Abroad",
+  },
   // {
   //   path: "/blog",
   //   title: "Blog",
