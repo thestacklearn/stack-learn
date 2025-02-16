@@ -10,7 +10,7 @@
 
 A starter to launch your blazing fast personal website and a blog, Built with [Gatsby][gatsby] and [Netlify CMS][netlifycms].
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/stackrole/gatsby-starter-foundation)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/thestacklearn/stack-learn)
 
 Need help launching your website? My DM's are open on <a href="https://twitter.com/stackrole">twitter</a>
 
